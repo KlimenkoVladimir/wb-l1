@@ -1,22 +1,17 @@
 // Базовый класс Shape
 class Shape {
-  // Метод для расчета площади (в базовом классе возвращает null)
-  calculateArea() {
-    return null;
-  }
-
-  // Метод для расчета периметра (в базовом классе возвращает null)
-  calculatePerimeter() {
-    return null;
+  // Конструктор принимает цвет фигуры
+  constructor(color) {
+    this.color = color;
   }
 
   // Метод для вывода информации о фигуре
   getInfo() {
-    return `Color: ${this.color}`;
+    return `Цвет: ${this.color}`;
   }
 }
 
-// Подкласс Rectangle (прямоугольник), расширяющий базовый класс Shape
+// Подкласс Rectangle
 class Rectangle extends Shape {
   // Конструктор принимает цвет, ширину и высоту прямоугольника
   constructor(color, width, height) {
@@ -37,13 +32,13 @@ class Rectangle extends Shape {
 
   // Переопределение метода getInfo для вывода информации о прямоугольнике
   getInfo() {
-    return `Rectangle - ${super.getInfo()}, Width: ${this.width}, Height: ${
-      this.height
-    }`;
+    return `Прямоугольник - ${super.getInfo()}, Ширина: ${
+      this.width
+    }, Высота: ${this.height}`;
   }
 }
 
-// Подкласс Circle (круг), расширяющий базовый класс Shape
+// Подкласс Circle
 class Circle extends Shape {
   // Конструктор принимает цвет и радиус круга
   constructor(color, radius) {
@@ -63,11 +58,11 @@ class Circle extends Shape {
 
   // Переопределение метода getInfo для вывода информации о круге
   getInfo() {
-    return `Circle - ${super.getInfo()}, Radius: ${this.radius}`;
+    return `Круг - ${super.getInfo()}, Радиус: ${this.radius}`;
   }
 }
 
-// Подкласс Triangle (треугольник), расширяющий базовый класс Shape
+// Подкласс Triangle
 class Triangle extends Shape {
   // Конструктор принимает цвет и длины трех сторон треугольника
   constructor(color, side1, side2, side3) {
@@ -92,24 +87,8 @@ class Triangle extends Shape {
 
   // Переопределение метода getInfo для вывода информации о треугольнике
   getInfo() {
-    return `Triangle - ${super.getInfo()}, Side1: ${this.side1}, Side2: ${
-      this.side2
-    }, Side3: ${this.side3}`;
+    return `Треугольник - ${super.getInfo()}, Сторона 1: ${
+      this.side1
+    }, Сторона 2: ${this.side2}, Сторона 3: ${this.side3}`;
   }
 }
-
-// Пример использования классов
-const rectangle = new Rectangle("Blue", 5, 10);
-console.log(rectangle.getInfo());
-console.log("Area:", rectangle.calculateArea());
-console.log("Perimeter:", rectangle.calculatePerimeter());
-
-const circle = new Circle("Red", 7);
-console.log(circle.getInfo());
-console.log("Area:", circle.calculateArea());
-console.log("Perimeter:", circle.calculatePerimeter());
-
-const triangle = new Triangle("Green", 3, 4, 5);
-console.log(triangle.getInfo());
-console.log("Area:", triangle.calculateArea());
-console.log("Perimeter:", triangle.calculatePerimeter());
