@@ -45,6 +45,43 @@
           </button>
         </form>
       </div>
+      <div class="task">
+        <h3>Задание 24</h3>
+        <table id="data-table"></table>
+        <div id="pagination"></div>
+      </div>
+      <div id="25" class="task">
+        <h3>Задание 25</h3>
+      </div>
+      <div class="task">
+        <h3>Задание 27</h3>
+        <button id="animatedButton">Нажми</button>
+      </div>
+      <div id="28" class="task">
+        <h3>Задание 28</h3>
+        <input type="text" />
+        <button
+          onclick="addNoteElement(this.parentElement.querySelector('input').value)"
+        >
+          Добавить заметку
+        </button>
+        <template id="template">
+          <div>
+            <h4>Это новая заметка</h4>
+            <p class="template-text">Это шаблон</p>
+          </div>
+        </template>
+      </div>
+      <div class="task">
+        <h3>Задание 29</h3>
+        <form id="myForm" onsubmit="submitForm(event)">
+          <input type="text" id="name" placeholder="Имя" required />
+          <input type="email" id="email" placeholder="Почта" required />
+          <button type="submit">Отправить</button>
+        </form>
+
+        <div id="result"></div>
+      </div>
     </div>
     <script src="./1.js"></script>
     <script src="./2.js"></script>
