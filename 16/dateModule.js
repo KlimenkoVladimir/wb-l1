@@ -1,4 +1,5 @@
-import moment from "moment";
+// Подключаем Moment.js
+import moment from "https://cdn.skypack.dev/moment";
 
 // Экспортируем функцию для форматирования текущей даты
 export function getCurrentDate() {

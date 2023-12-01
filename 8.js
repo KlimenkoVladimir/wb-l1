@@ -1,30 +1,20 @@
-// function executeFunctions(arr) {
-//   // Вызываем каждую функцию по очереди
-//   return function (...args) {
-//     const results = arr.map((func) => func(...args));
-//     return results;
-//   };
-// }
-
-// const getResult = executeFunctions(arr);
+// Задача о замыканиях: напишите функцию, которая будет принимать массив функций и возвращать новую функцию, которая вызывает каждую функцию в этом массиве и возвращает массив результатов, полученных после вызова каждой функции.
 
 function executeFunctions(arr) {
-  // Возвращаем функцию, которая вызывает каждую функцию по очереди и возвращает массив результатов
+  // Возвращаем функцию, которая вызывает каждую функцию из переданного массива и возвращает массив результатов после их выполнения.
   return function (...args) {
     const results = arr.map((func) => func(...args));
     return results;
   };
 }
 
-// Пример использования
+// Функции принимает аргумент x и возвращает функцию, которая принимает аргумент y
 const add = (x) => (y) => x + y;
 const multiply = (x) => (y) => x * y;
 const subtract = (x) => (y) => x - y;
 
+// Определяем массив с функциями, передаем x
 const functionsArray = [add(1), multiply(2), subtract(3)];
 
-// Создаем объект getResult, который содержит функцию для вызова функций из массива
+// Замыкаем getResult на массиве функций, готов к вызову с аргументами.
 const getResult = executeFunctions(functionsArray);
-
-// Вызываем объединенную функцию с аргументом 5
-// const results = getResult(5);
