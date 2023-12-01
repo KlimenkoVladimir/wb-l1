@@ -13,6 +13,20 @@ label {
   min-height: 100px;
 }
 
+/* 17 */
+#results-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+#results-list li {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
 /* 24 */
 
 table {
