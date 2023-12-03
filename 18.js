@@ -6,17 +6,17 @@ function getMaxLocalStorageSize() {
     // Пока не выдает ошибку заполняем хранилище
     while (true) {
       i++;
-      originalSetItem.call(
-        // Используем оригинальные методы localStorage
-        localStorage,
+      localStorage.setItem(
         "test",
-        new Array(i * 1024 * 512).join("a") // Помещаем в test строку весом 1 Мб, т.к. один символ весит 2 байта => 1024 * 512 *2 = 1Мб
+        new Array(i * 1024 * (1024 / 2)).join("a") // Помещаем в test строку весом 1 Мб, т.к. один символ весит 2 байта => 1024 * 1024/2 = 1Мб
       );
     }
   } catch (e) {
     // Если ошибка значит хранилище переполнено
-    originalRemoveItem.call(localStorage, "test"); // Очищаем
-    originalSetItem.call(localStorage, "size", i); // Устанавливаем размер
+    localStorage.removeItem("test"); // Очищаем
+    localStorage.setItem("size", i); // Устанавливаем размер
   }
-  return Number(localStorage.getItem("size"));
+  return Number(localStorage.getItem("size")) * 1024; // Для удобства возвращаем значение в Кб
 }
+
+export default getMaxLocalStorageSize;
