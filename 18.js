@@ -1,3 +1,5 @@
+// Подсчитать максимальный объем данных, который можно записать в localStorage вашего браузера.
+
 function getMaxLocalStorageSize() {
   console.log("getMax");
   localStorage.clear(); // Очищаем хранилище перед замером
