@@ -7,18 +7,6 @@
 // 	Будет плюсом, если задумаетесь и об оптимизации.
 
 const MathX = (function () {
-  // Функция для проверки простоты числа
-  function isPrime(num) {
-    if (num < 2) return false;
-    for (let i = 2; i <= num; i++) {
-      // Если num делится без остатка, то оно не является простым
-      if (num % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  }
-
   // Возвращаемый объект с методами
   return {
     // Вычисление N-го числа в ряду Фибоначчи
@@ -41,10 +29,17 @@ const MathX = (function () {
     // Вычисление всех чисел в ряду Фибоначчи до числа N
     fibonacciSequence: function (n) {
       // Первые два числа 0 и 1
-      const arr = [0, 1];
-      for (let i = 3; i <= n; i++) {
-        // Добавляем следующее число Фибоначчи
-        arr.push(this.fibonacci(i));
+      const arr = [];
+      let count = 1;
+      while (true) {
+        const nextFibonacci = this.fibonacci(count);
+        if (nextFibonacci <= n) {
+          // Добавляем следующее число Фибоначчи
+          arr.push(nextFibonacci);
+          count++;
+        } else {
+          break; // Прерываем цикл, если следующее число превысило n
+        }
       }
       return arr;
     },

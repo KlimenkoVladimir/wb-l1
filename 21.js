@@ -47,6 +47,6 @@ function calculateStackSize() {
   console.log("Размер коллстэка: ", x.toFixed(3), "Кб");
 }
 
-// Chrome ~ 980 Кб
+// Chrome ~ 979 Кб
 // Opera  ~981 Кбайт
 // Яндекс Браузер ~980 Кбайт

@@ -5,10 +5,24 @@
 // После завершения работы второй функции вызвать третью функцию.
 // И так далее, пока все функции в массиве не будут вызваны по порядку.
 
-function callFunctions(arr) {
+// Например
+[
+  async function () {
+    await new Promise((resolve) =>
+      setTimeout(() => {
+        console.log(1);
+        resolve();
+      }, 1000)
+    );
+  },
+  () => console.log(2),
+  () => console.log(3),
+  () => console.log(4),
+];
+
+async function callFunctions(arr) {
   // Вызываем каждую функцию по очереди
-  arr.forEach((func, index) => {
-    func();
-    console.log(index);
-  });
+  for (const func of arr) {
+    await func();
+  }
 }

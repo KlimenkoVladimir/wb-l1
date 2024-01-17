@@ -1,5 +1,7 @@
 // Реализовать функцию конвертации строки в JSON со всеми необходимыми проверками и валидациями.
 
+// Пример '{"name": "John", "age": 25, "address":{"city": "New York", "country": null}, "isActive": true}'
+
 function customJsonParse(jsonString) {
   let index = 0;
 

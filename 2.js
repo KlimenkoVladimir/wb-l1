@@ -5,6 +5,7 @@ function isStrangeNumber(num) {
   // Отрицательные числа и ноль не могут быть странными
   if (num <= 0) {
     console.log(false);
+    return;
   }
 
   let sumOfDivisors = 0;

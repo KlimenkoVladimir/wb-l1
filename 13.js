@@ -34,9 +34,9 @@ class Rectangle extends Shape {
 
   // Переопределение метода getInfo для вывода информации о прямоугольнике
   getInfo() {
-    return `Прямоугольник - ${super.getInfo()}, Ширина: ${
-      this.width
-    }, Высота: ${this.height}`;
+    return `Прямоугольник, ${super.getInfo()}, Ширина: ${this.width}, Высота: ${
+      this.height
+    }`;
   }
 }
 
@@ -60,7 +60,7 @@ class Circle extends Shape {
 
   // Переопределение метода getInfo для вывода информации о круге
   getInfo() {
-    return `Круг - ${super.getInfo()}, Радиус: ${this.radius}`;
+    return `Круг, ${super.getInfo()}, Радиус: ${this.radius}`;
   }
 }
 
@@ -89,7 +89,7 @@ class Triangle extends Shape {
 
   // Переопределение метода getInfo для вывода информации о треугольнике
   getInfo() {
-    return `Треугольник - ${super.getInfo()}, Сторона 1: ${
+    return `Треугольник, ${super.getInfo()}, Сторона 1: ${
       this.side1
     }, Сторона 2: ${this.side2}, Сторона 3: ${this.side3}`;
   }

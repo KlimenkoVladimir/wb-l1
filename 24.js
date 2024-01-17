@@ -110,11 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return sortDirection === "asc"
           ? x.localeCompare(y)
           : y.localeCompare(x);
-      } else if (typeof x === "number" && typeof y === "number") {
+      } else {
         return sortDirection === "asc" ? x - y : y - x;
       }
-
-      return 0;
     });
   }
 

@@ -32,7 +32,6 @@ function handleGeocodeResponse(data, callback) {
   const results = data.response.GeoObjectCollection.featureMember.map(
     (item) => ({
       address: item.GeoObject.metaDataProperty.GeocoderMetaData.text,
-      coordinates: item.GeoObject.Point.pos.split(" ").reverse(),
     })
   );
   // Вызов переданной callback-функции с результатами геокодирования

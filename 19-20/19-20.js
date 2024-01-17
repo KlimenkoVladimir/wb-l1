@@ -39,15 +39,19 @@ start();
 const addPostsToLocalStorage = () => {
   let currentSize = JSON.stringify(localStorage).length / 512; // Получаем текущий размер хранилища в Кб
   let newDataSize = JSON.stringify(postsToRender).length / 512; // Получаем размер новых постов в Кб
-  console.log(posts);
   // При переполнении хранилища удаляем половину постов, загруженных ранее
   if (currentSize + newDataSize >= maxSize) {
-    posts = posts.slice(COUNT * 2);
+    posts = posts.slice(posts.length / 2);
   }
 
   localStorage.setItem("posts", JSON.stringify(posts)); //Передаем посты в хранилище
   currentSize = JSON.stringify(localStorage).length / 512; // Обновляем текущий размер хранилища
-  console.log("Объем данных в Local Storage: ", currentSize, "/", maxSize);
+  console.log(
+    "Объем данных в Local Storage: ",
+    Math.floor(currentSize),
+    "/",
+    maxSize
+  );
 };
 
 // Функция для получения группы:

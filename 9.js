@@ -1,4 +1,14 @@
 // Реализовать функцию конвертации JSON в строку
+// Пример
+// {
+//   name: 'John',
+//   age: 25,
+//   address: {
+//     city: 'New York',
+//     country: 'USA'
+//   },
+//   isActive: true
+// }
 
 function customStringify(obj) {
   if (typeof obj !== "object" || obj === null) {

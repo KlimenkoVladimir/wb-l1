@@ -8,6 +8,7 @@ const template = document.getElementById("template");
 function addNoteElement(text) {
   // Клонируем содержимое шаблона, создаем заметку
   const newNote = document.importNode(template.content, true);
+  console.log(newNote);
 
   // Передаем текст в заметку
   const noteTextElement = newNote.querySelector(".template-text");
